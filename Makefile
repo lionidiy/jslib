@@ -26,3 +26,15 @@ help:
 	@echo "- cleanall                Remove all the build artefacts"
 	@echo "- check-deps              Check if the required dependencies are installed"
 	@echo
+
+.PHONY: apidoc
+apidoc: build/timestamps/jsdoc-$(BRANCH)-timestamp
+
+.PHONY: build
+build: build/jslib.css build/jslib.js build/jslib-debug.js build/jslib.js.map
+
+.PHONY: check
+check: lint build/ol.js test
+
+.PHONY: check-examples
+check-examples: $(CHECK_EXAMPLE_TIMESTAMPS)
