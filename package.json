@@ -4,7 +4,9 @@
   "description": "javascript common library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha -u bdd",
+    "index": "node index.js",
+    "testjs": "npm run index"
   },
   "keywords": [
     "javascript",
